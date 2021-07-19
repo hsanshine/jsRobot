@@ -88,6 +88,7 @@ function runRobot(state, robot, memory) {
 
 // bad stategy is randomly moving to places to see if you can pick something from a place or have to deliver to the place
 
+//returns a random element from an array
 function randomPick(array) {
   let choice = Math.floor(Math.random() * array.length);
   return array[choice];
@@ -148,6 +149,7 @@ function findRoute(graph, from, to) {
   }
 }
 
+//(VillageState, Array) -> {direction: string, memory: Array}
 function goalOrientedRobot({ place, parcels }, route) {
   if (route.length == 0) {
     let parcel = parcel[0];
